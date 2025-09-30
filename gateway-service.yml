@@ -1,0 +1,15 @@
+server:
+  port: 8080 # Gateway bu portdan müraciətləri qəbul edəcək
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          # Bu, Gateway-in Eureka-dakı servisləri avtomatik tapmasını təmin edir
+          enabled: true
