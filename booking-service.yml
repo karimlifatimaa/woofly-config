@@ -1,0 +1,20 @@
+server:
+  port: 8082 # Booking Service üçün unikal port
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/woofly_booking_db # Hər servis üçün ayrı databaza
+    username: postgres
+    password: "0504" # Öz şifrənizi dırnaq içində yazın
+  jpa:
+    hibernate:
+      ddl-auto: update # İnkişaf mərhələsi üçün cədvəlləri avtomatik yaradır/yeniləyir
+    show-sql: true # Bütün SQL sorğularını konsolda göstərir
+    properties:
+      hibernate:
+        format_sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
